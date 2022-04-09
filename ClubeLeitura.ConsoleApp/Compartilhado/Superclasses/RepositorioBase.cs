@@ -24,9 +24,11 @@ namespace ClubeLeitura.ConsoleApp.Superclasses
 
             registro.Add(objeto);
 
-            Arquivo arq = new(objeto);
-
-            arq.GuardarArquivoJson();
+            if (objeto is Amigo)
+            {
+                Arquivo arq = new(objeto);
+                arq.GuardarArquivoJson();
+            }
 
             return status;
         }
